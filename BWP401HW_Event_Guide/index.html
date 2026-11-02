@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="دليل فعاليات الجامعة الافتراضية">
+    <title>الرئيسية | دليل الفعاليات</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    
+    <style>
+        @keyframes pulse-glow { 0% { box-shadow: 0 0 0 0 rgba(197, 160, 89, 0.4); } 70% { box-shadow: 0 0 0 20px rgba(197, 160, 89, 0); } 100% { box-shadow: 0 0 0 0 rgba(197, 160, 89, 0); } }
+        @keyframes gradientShift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+        
+        .university-logo { height: 60px; width: auto; object-fit: contain; margin-left: 15px; filter: drop-shadow(0 0 5px rgba(255,255,255,0.2)); }
+        
+        /* Hero */
+        .hero { position: relative; background: url('assets/img/hero-bg.jpg') center/cover fixed; padding: 150px 0; display: flex; align-items: center; justify-content: center; text-align: center; }
+        .hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(2, 6, 23, 0.85) 0%, rgba(15, 23, 42, 0.7) 100%); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(197, 160, 89, 0.1); border: 1px solid rgba(197, 160, 89, 0.3); color: var(--gold); padding: 8px 18px; border-radius: 50px; font-size: 0.9rem; font-weight: 700; backdrop-filter: blur(10px); margin-bottom: 25px; }
+        .hero-text-gradient { font-size: clamp(3rem, 6vw, 5.5rem); line-height: 1.2; font-weight: 800; margin-bottom: 25px; background: linear-gradient(270deg, #ffffff, #c5a059, #ffffff); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: gradientShift 4s linear infinite; text-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .hero-text-gradient em { font-style: normal; color: #c5a059; -webkit-text-fill-color: #c5a059; }
+        .hero-desc { color: #e2e8f0; font-size: 1.2rem; line-height: 1.8; max-width: 700px; margin-bottom: 40px; }
+        .btn-hero { background: linear-gradient(135deg, #c5a059, #e2c78e); color: #0f172a; font-weight: 800; font-size: 1.1rem; padding: 16px 40px; border-radius: 16px; border: none; display: inline-flex; align-items: center; gap: 10px; transition: 0.3s; animation: pulse-glow 2s infinite; margin-bottom: 50px; }
+        .btn-hero:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 15px 30px rgba(197, 160, 89, 0.6); color: #0f172a; }
+        .hero-stats { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+        .stat-card { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 20px 30px; display: flex; flex-direction: column; align-items: center; transition: 0.3s; min-width: 150px; }
+        .stat-card:hover { background: rgba(255, 255, 255, 0.1); transform: translateY(-5px); border-color: var(--gold); }
+        .stat-card b { font-size: 2rem; color: #fff; line-height: 1; margin-bottom: 8px; font-weight: 800; }
+        .stat-card small { color: #cbd5e1; font-size: 0.9rem; font-weight: 600; }
+        @media (max-width: 768px) { .hero { padding: 100px 0; background-attachment: scroll; } .hero-text-gradient { font-size: 2.5rem; } .hero-desc { font-size: 1rem; } .stat-card { padding: 15px 20px; min-width: 120px; } .stat-card b { font-size: 1.5rem; } }
+        
+        /* Categories & Cards */
+        .modern-category { background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 25px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; transition: 0.4s; height: 100%; color: var(--ink); text-decoration: none; box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
+        .modern-category:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); border-color: var(--gold); }
+        .modern-category .icon-wrapper { width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin-bottom: 15px; transition: 0.3s; }
+        .modern-category:hover .icon-wrapper { animation: bounce 0.6s infinite; }
+        .bg-c1 { background: #fefaf5; color: #9a7b4f; } .bg-c2 { background: #f0f4f3; color: #4a6b5d; } .bg-c3 { background: #f3f4f6; color: #475569; } .bg-c4 { background: #fdf8ed; color: #8c6b3d; }
+        
+        /* Slider */
+        .modern-slider-container { display: flex; flex-wrap: nowrap; overflow-x: auto; scroll-snap-type: x mandatory; gap: 24px; padding-bottom: 20px; scrollbar-width: none; padding-left: 12px; padding-right: 12px; }
+        .modern-slider-container::-webkit-scrollbar { display: none; }
+        .slider-card { flex: 0 0 100%; scroll-snap-align: start; }
+        @media (min-width: 768px) { .slider-card { flex: 0 0 calc(50% - 12px); } }
+        @media (min-width: 992px) { .slider-card { flex: 0 0 calc(33.333% - 16px); } }
+        .modern-event-card { border: none; border-radius: 24px; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.4s; height: 100%; overflow: hidden; display: flex; flex-direction: column; }
+        .modern-event-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .modern-event-img-wrapper { position: relative; overflow: hidden; height: 220px; }
+        .modern-event-img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s; }
+        .modern-event-card:hover .modern-event-img-wrapper img { transform: scale(1.08); }
+        .floating-badge { position: absolute; top: 15px; right: 15px; padding: 6px 14px; border-radius: 30px; font-size: 0.85rem; font-weight: 700; backdrop-filter: blur(8px); background: rgba(255, 255, 255, 0.9); box-shadow: 0 4px 10px rgba(0,0,0,0.1); z-index: 2; }
+        .slider-btn { width: 50px; height: 50px; border-radius: 50%; background: #fff; color: var(--gold); border: 1px solid var(--line); display: inline-flex; align-items: center; justify-content: center; transition: 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.05); cursor: pointer; }
+        .slider-btn:hover { background: var(--gold); color: #fff; border-color: var(--gold); transform: scale(1.1); box-shadow: 0 8px 25px rgba(197, 160, 89, 0.4); }
+        .modern-btn-details { display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 12px 20px; border-radius: 12px; background: #f8fafc; color: var(--primary); font-weight: 700; text-decoration: none; transition: 0.3s; border: 1px solid var(--line); margin-top: auto; }
+        .modern-btn-details:hover { background: var(--gold); color: #fff; border-color: var(--gold); }
+        .modern-btn-details i { transition: 0.3s; }
+        .modern-btn-details:hover i { transform: translateX(-5px); }
+        
+        /* Team */
+        .modern-person-card { background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 30px 20px; text-align: center; height: 100%; transition: 0.4s; box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
+        .modern-person-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.08); border-color: var(--gold); }
+        .modern-person-avatar { width: 70px; height: 70px; background: #f8fafc; color: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; font-weight: 800; margin: 0 auto 15px; border: 2px dashed var(--line); transition: 0.3s; overflow: hidden; }
+        .modern-person-avatar img { width: 100%; height: 100%; object-fit: cover; }
+        .modern-person-card:hover .modern-person-avatar { border-color: var(--gold); background: rgba(197, 160, 89, 0.05); transform: rotate(10deg); }
+    </style>
+</head>
+<body>
+    <header class="modern-header sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-dark container-fluid px-4">
+            <a class="navbar-brand d-flex align-items-center me-auto" href="index.html">
+                <img src="assets/img/svu-logo.png" alt="شعار الجامعة" class="university-logo">
+                <div>دليل الفعاليات<div style="font-size: 0.7rem; color: #94a3b8; font-weight: 400;">الجامعة الافتراضية السورية</div></div>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-label="القائمة"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse justify-content-center" id="nav">
+                <ul class="navbar-nav gap-3 gap-lg-4">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">الرئيسية</a></li>
+                    <li class="nav-item"><a class="nav-link" href="events.html">كل الفعاليات</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">عن الدليل</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">اتصل بنا</a></li>
+                    <li class="nav-item d-flex align-items-center">
+                        <button id="darkModeToggle" class="btn btn-sm btn-outline-warning rounded-circle ms-2" style="width: 40px; height: 40px;" aria-label="الوضع المظلم"><i class="fas fa-moon"></i></button>
+                    </li>
+                </ul>
+            </div>
+            <div class="d-none d-lg-block" style="width: 180px;"></div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-content">
+                <span class="hero-badge">بوابتك إلى حياة جامعية استثنائية</span>
+                <h1 class="hero-text-gradient">تجارب تُلهم،<br><em>ولحظات لا تُنسى.</em></h1>
+                <p class="hero-desc">اكتشف أجمل الفعاليات الثقافية، الفنية، والرياضية التي أعدتها الجامعة الافتراضية. شارك، تفاعل، وكن جزءاً من مجتمع يتجاوز حدود الشاشات ليصنع ذكرياتك.</p>
+                <a class="btn-hero" href="events.html">استكشف الأجندة الآن <i class="fas fa-arrow-left"></i></a>
+                <div class="hero-stats">
+                    <div class="stat-card"><b>+20</b><small>فعالية متميزة</small></div>
+                    <div class="stat-card"><b>5</b><small>مسارات إبداعية</small></div>
+                    <div class="stat-card"><b>مجتمع</b><small>يشاركك الشغف</small></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="heading justify-content-center text-center">
+                    <div><label>مساحات تفتح لك آفاقًا جديدة</label><h2>اكتشف ما يشبه شغفك</h2><p>من المعرفة والفنون إلى الرياضة والمبادرات، اكتشف تجارب جديدة واصنع لحظات تستحق أن تُعاش.</p></div>
+                </div>
+                <div class="row g-4 mt-2">
+                    <div class="col-6 col-lg-3">
+                        <a class="modern-category" href="events.html?category=culture">
+                            <div class="icon-wrapper bg-c1"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width: 36px; height: 36px;"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg></div>
+                            <b>ثقافة ومعرفة</b><small>أفكار تثري عقلك، وتجارب توسّع آفاقك.</small>
+                        </a>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <a class="modern-category" href="events.html?category=sport">
+                            <div class="icon-wrapper bg-c2"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width: 36px; height: 36px;"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" /></svg></div>
+                            <b>رياضة ونشاط</b><small>طاقة تتجدد، وتحديات نصنعها معًا.</small>
+                        </a>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <a class="modern-category" href="events.html?category=music">
+                            <div class="icon-wrapper bg-c3"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width: 36px; height: 36px;"><path stroke-linecap="round" stroke-linejoin="round" d="M9 9l10.5-3m0 6.553v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 11-.99-3.467l2.31-.66a2.25 2.25 0 001.632-2.163zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 01-.99-3.467l2.31-.66A2.25 2.25 0 009 15.553z" /></svg></div>
+                            <b>فن وموسيقى</b><small>ألحان تلامس الروح، وإبداعات بلا حدود.</small>
+                        </a>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <a class="modern-category" href="events.html?category=social">
+                            <div class="icon-wrapper bg-c4"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width: 36px; height: 36px;"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" /></svg></div>
+                            <b>مجتمع وطلاب</b><small>لقاءات تقرّبنا، ومبادرات تترك أثرًا.</small>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section soft" style="background: #f8fafc;">
+            <div class="container">
+                <div class="heading align-items-end">
+                    <div><label>لك خصيصاً</label><h2>أبرز الفعاليات التي تنتظرك</h2><p>خطط لأوقاتك واصنع ذكريات لا تُنسى.</p></div>
+                    <div class="d-flex gap-2">
+                        <button type="button" class="slider-btn" id="prev" aria-label="السابق"><i class="fas fa-chevron-right"></i></button> 
+                        <button type="button" class="slider-btn" id="next" aria-label="التالي"><i class="fas fa-chevron-left"></i></button>
+                    </div>
+                </div>
+                <div class="modern-slider-container" id="featured">
+                    <div class="slider-card event-item" data-title="ورشة المهارات الرقمية" data-category="culture" data-date="2024-10-24" data-location="دمشق" data-search="ورشة المهارات الرقمية اكتشف أدوات العصر الرقمي. ثقافة ومعرفة">
+                        <article class="modern-event-card">
+                            <div class="modern-event-img-wrapper"><span class="badge tag-culture floating-badge">ثقافة ومعرفة</span><img src="assets/img/culture-1.jpg" alt="ورشة المهارات الرقمية"></div>
+                            <div class="modern-event-body text-center">
+                                <h3>ورشة المهارات الرقمية</h3><p class="text-muted mb-4">اكتشف أدوات العصر الرقمي واصنع مستقبلك التقني.</p>
+                                <div class="d-flex justify-content-center gap-3 text-muted small mb-4"><span><i class="far fa-calendar-alt me-1"></i> 24 تشرين الأول</span><span><i class="fas fa-map-marker-alt me-1"></i> دمشق</span></div>
+                                <a class="modern-btn-details" href="event.html?id=1"><span>تفاصيل الفعالية</span><i class="fas fa-arrow-left"></i></a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="slider-card event-item" data-title="لقاء المجتمع الطلابي" data-category="social" data-date="2024-11-02" data-location="دمشق" data-search="لقاء المجتمع الطلابي مساحتك للتواصل. مجتمع وطلاب">
+                        <article class="modern-event-card">
+                            <div class="modern-event-img-wrapper"><span class="badge tag-social floating-badge">مجتمع وطلاب</span><img src="assets/img/social-1.jpg" alt="لقاء المجتمع الطلابي"></div>
+                            <div class="modern-event-body text-center">
+                                <h3>لقاء المجتمع الطلابي</h3><p class="text-muted mb-4">مساحتك للتواصل، بناء الصداقات، وإطلاق المبادرات.</p>
+                                <div class="d-flex justify-content-center gap-3 text-muted small mb-4"><span><i class="far fa-calendar-alt me-1"></i> 02 تشرين الثاني</span><span><i class="fas fa-map-marker-alt me-1"></i> دمشق</span></div>
+                                <a class="modern-btn-details" href="event.html?id=2"><span>تفاصيل الفعالية</span><i class="fas fa-arrow-left"></i></a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="slider-card event-item" data-title="أمسية موسيقية شبابية" data-category="music" data-date="2024-11-08" data-location="حمص" data-search="أمسية موسيقية شبابية لحظات موسيقية استثنائية. فن وموسيقى">
+                        <article class="modern-event-card">
+                            <div class="modern-event-img-wrapper"><span class="badge tag-music floating-badge">فن وموسيقى</span><img src="assets/img/music-1.jpg" alt="أمسية موسيقية شبابية"></div>
+                            <div class="modern-event-body text-center">
+                                <h3>أمسية موسيقية شبابية</h3><p class="text-muted mb-4">لحظات موسيقية استثنائية تحتفي بمواهبكم الشابة.</p>
+                                <div class="d-flex justify-content-center gap-3 text-muted small mb-4"><span><i class="far fa-calendar-alt me-1"></i> 08 تشرين الثاني</span><span><i class="fas fa-map-marker-alt me-1"></i> حمص</span></div>
+                                <a class="modern-btn-details" href="event.html?id=3"><span>تفاصيل الفعالية</span><i class="fas fa-arrow-left"></i></a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <div id="dots" class="dots mt-4"></div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="heading">
+                    <div><label>جديدنا</label><h2>أحدث الفعاليات الملهمة</h2><p>اكتشف ما أعددناه لك من تجارب فريدة.</p></div>
+                    <a href="events.html" class="fw-bold text-decoration-none" style="color: var(--gold);">عرض الكل <i class="fas fa-arrow-left ms-1"></i></a>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4 event-item" data-title="جلسة حوار حول الابتكار" data-category="culture" data-date="2024-11-15" data-location="اللاذقية" data-search="جلسة حوار حول الابتكار نقاشات ملهمة. ثقافة ومعرفة">
+                        <article class="modern-event-card">
+                            <div class="modern-event-img-wrapper"><span class="badge tag-culture floating-badge">ثقافة ومعرفة</span><img src="assets/img/culture-2.jpg" alt="جلسة حوار حول الابتكار"></div>
+                            <div class="modern-event-body text-center">
+                                <h3>جلسة حوار حول الابتكار</h3><p class="text-muted mb-4">نقاشات ملهمة لصياغة أفكار تحدث فرقاً حقيقياً.</p>
+                                <div class="d-flex justify-content-center gap-3 text-muted small mb-4"><span><i class="far fa-calendar-alt me-1"></i> 15 تشرين الثاني</span><span><i class="fas fa-map-marker-alt me-1"></i> اللاذقية</span></div>
+                                <a class="modern-btn-details" href="event.html?id=4"><span>تفاصيل الفعالية</span><i class="fas fa-arrow-left"></i></a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-lg-4 event-item" data-title="يوم النشاط الرياضي" data-category="sport" data-date="2024-11-20" data-location="حلب" data-search="يوم النشاط الرياضي تحديات رياضية. رياضة ونشاط">
+                        <article class="modern-event-card">
+                            <div class="modern-event-img-wrapper"><span class="badge tag-sport floating-badge">رياضة ونشاط</span><img src="assets/img/sport-1.jpg" alt="يوم النشاط الرياضي"></div>
+                            <div class="modern-event-body text-center">
+                                <h3>يوم النشاط الرياضي</h3><p class="text-muted mb-4">تحديات رياضية وطاقة إيجابية تنبض بروح الفريق.</p>
+                                <div class="d-flex justify-content-center gap-3 text-muted small mb-4"><span><i class="far fa-calendar-alt me-1"></i> 20 تشرين الثاني</span><span><i class="fas fa-map-marker-alt me-1"></i> حلب</span></div>
+                                <a class="modern-btn-details" href="event.html?id=5"><span>تفاصيل الفعالية</span><i class="fas fa-arrow-left"></i></a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-lg-4 event-item" data-title="مبادرة أثر طيب" data-category="social" data-date="2024-11-25" data-location="طرطوس" data-search="مبادرة أثر طيب اصنع أثراً طيباً. مجتمع وطلاب">
+                        <article class="modern-event-card">
+                            <div class="modern-event-img-wrapper"><span class="badge tag-social floating-badge">مجتمع وطلاب</span><img src="assets/img/social-2.jpg" alt="مبادرة أثر طيب"></div>
+                            <div class="modern-event-body text-center">
+                                <h3>مبادرة أثر طيب</h3><p class="text-muted mb-4">اصنع أثراً طيباً وساهم في تنمية مجتمعك.</p>
+                                <div class="d-flex justify-content-center gap-3 text-muted small mb-4"><span><i class="far fa-calendar-alt me-1"></i> 25 تشرين الثاني</span><span><i class="fas fa-map-marker-alt me-1"></i> طرطوس</span></div>
+                                <a class="modern-btn-details" href="event.html?id=6"><span>تفاصيل الفعالية</span><i class="fas fa-arrow-left"></i></a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section soft" style="background: #f8fafc;">
+            <div class="container">
+                <div class="heading justify-content-center text-center mb-5">
+                    <div><label>فخر إنجازنا</label><h2>العقول المبدعة وراء المنصة</h2><p>أُعد هذا الموقع ضمن متطلبات مادة BWP401.</p></div>
+                </div>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="modern-person-card">
+                            <div class="modern-person-avatar">ر</div><h3>روان محمد صوان</h3><b>ID: rawan_292134</b><p>الشعبة: C8</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="modern-person-card">
+                            <div class="modern-person-avatar">أ</div><h3>احمد جميل حسين فياض</h3><b>ID: ahmad_347912</b><p>الشعبة: C8</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="modern-person-card">
+                            <div class="modern-person-avatar">ح</div><h3>حيان ابراهيم الدرويش</h3><b>ID: haean_395180</b><p>الشعبة: C8</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="modern-person-card">
+                            <div class="modern-person-avatar"><img src="assets/img/Waleed.jpg" alt="وليد فردوسي"></div><h3>وليد فردوسي</h3><b>ID: waleed_283952</b><p>الشعبة: C8</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="modern-footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                    <img src="assets/img/svu-logo.png" alt="شعار الجامعة" style="height: 70px; margin-bottom: 15px; filter: drop-shadow(0 0 5px rgba(255,255,255,0.2));">
+                    <p style="line-height: 1.8;">مساحة رقمية تجمع المعرفة والإبداع والمجتمع الجامعي في مكان واحد، لتسهيل وصول الطلاب إلى كافة الأنشطة.</p>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                    <h4>روابط سريعة</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">الرئيسية</a></li><li><a href="events.html">الفعاليات</a></li><li><a href="about.html">عن الدليل</a></li><li><a href="contact.html">اتصل بنا</a></li><li><a href="https://www.svuonline.org/" target="_blank" rel="noopener">موقع الجامعة الرسمي</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h4>تواصل معنا</h4>
+                    <p>📧 info@svu-events.edu</p><p>📍 الجامعة الافتراضية السورية</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4>تابعنا</h4>
+                    <p class="mb-3">ابقَ على اطلاع بأحدث الفعاليات.</p>
+                    <div class="social-icons d-flex flex-wrap" style="gap: 15px;">
+                        <a href="#" class="facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="x-twitter" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" class="instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom"><p class="m-0">&copy; 2024 دليل فعاليات الجامعة الافتراضية.</p></div>
+        </div>
+    </footer>
+
+    <button id="topBtn" aria-label="العودة للأعلى">↑</button>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

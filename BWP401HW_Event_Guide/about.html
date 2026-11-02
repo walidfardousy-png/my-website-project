@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="عن الدليل - دليل فعاليات الجامعة الافتراضية">
+    <title>عن الدليل | دليل الفعاليات</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    
+    <style>
+        /* Custom */
+        .university-logo { height: 60px; width: auto; object-fit: contain; margin-left: 15px; filter: drop-shadow(0 0 5px rgba(255,255,255,0.2)); }
+        .modern-value-card { background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 30px; height: 100%; transition: all 0.4s ease; box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
+        .modern-value-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); border-color: var(--gold); }
+        .value-icon { width: 80px; height: 80px; background: #f8fafc; color: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; transition: all 0.4s ease; border: 1px dashed var(--line); }
+        .modern-value-card:hover .value-icon { background: rgba(197, 160, 89, 0.1); border-color: var(--gold); transform: scale(1.1) rotate(5deg); }
+        .modern-value-card h3 { font-weight: 800; color: var(--primary); margin-bottom: 10px; }
+        .modern-person-card { background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 30px 20px; text-align: center; height: 100%; transition: all 0.4s ease; position: relative; overflow: hidden; }
+        .modern-person-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: var(--gold); transform: scaleX(0); transition: transform 0.4s ease; }
+        .modern-person-card:hover::before { transform: scaleX(1); }
+        .modern-person-card:hover { box-shadow: 0 15px 30px rgba(0,0,0,0.08); }
+        .modern-person-avatar { width: 80px; height: 80px; background: #f8fafc; color: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 800; margin: 0 auto 15px; border: 2px dashed var(--line); transition: all 0.3s ease; overflow: hidden; }
+        .modern-person-avatar img { width: 100%; height: 100%; object-fit: cover; }
+        .modern-person-card:hover .modern-person-avatar { border-color: var(--gold); background: rgba(197, 160, 89, 0.05); transform: rotate(10deg); border-style: solid; }
+        .modern-person-card h3 { font-size: 1.1rem; font-weight: 800; margin-bottom: 5px; }
+        .modern-person-card b { color: var(--gold); font-size: 0.9rem; display: block; margin-bottom: 10px; }
+        .modern-person-card p { color: var(--muted); font-size: 0.9rem; margin: 0; }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="modern-header sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-dark container-fluid px-4">
+            <a class="navbar-brand d-flex align-items-center me-auto" href="index.html">
+                <img src="assets/img/svu-logo.png" alt="شعار الجامعة" class="university-logo">
+                <div>دليل الفعاليات<div style="font-size: 0.7rem; color: #94a3b8; font-weight: 400;">الجامعة الافتراضية السورية</div></div>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#nav"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse justify-content-center" id="nav">
+                <ul class="navbar-nav gap-3 gap-lg-4">
+                    <li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li>
+                    <li class="nav-item"><a class="nav-link" href="events.html">كل الفعاليات</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="about.html">عن الدليل</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">اتصل بنا</a></li>
+                    <li class="nav-item d-flex align-items-center"><button id="darkModeToggle" class="btn btn-sm btn-outline-warning rounded-circle ms-2" style="width: 40px; height: 40px;"><i class="fas fa-moon"></i></button></li>
+                </ul>
+            </div>
+            <div class="d-none d-lg-block" style="width: 180px;"></div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="pagehero">
+            <div class="container text-center"><label>فلسفتنا ورؤيتنا</label><h1>نُعيد تعريف الحياة الجامعية، بعيداً عن روتين المحاضرات.</h1><p>مساحات للإلهام، وأدوات لصقل المواهب، وتجارب تصنع ذكريات تدوم.</p></div>
+        </section>
+
+        <!-- About -->
+        <section class="section">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6">
+                        <label class="mb-2 d-block">جوهر المنصة</label>
+                        <h2 class="bigtitle mb-4">بوابتك الشاملة لعالم الأنشطة الجامعية.</h2>
+                        <p class="text-muted fs-5 mb-4">صُممت هذه المنصة لتكون الدليل الأمثل الذي يجمع الأنشطة الطلابية والثقافية والفنية في واجهة عصرية وسلسة. نهدف إلى تمكينك من اكتشاف الفعاليات وتفاصيلها بلمسة واحدة، لتخطط لمسارك الجامعي بذكاء.</p>
+                        <p class="text-muted">تتضمن المنصة فعاليات تجريبية تم إعدادها كجزء من متطلبات مشروع التخرج، مع بنية تقنية قابلة للتوسع لربطها بمصادر البيانات الرسمية مستقبلاً.</p>
+                    </div>
+                    <div class="col-lg-6"><img class="aboutimg shadow-lg" src="assets/img/about.jpg" alt="طلاب في الجامعة" style="border-radius: 24px;"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values -->
+        <section class="section soft">
+            <div class="container">
+                <div class="heading justify-content-center text-center mb-5"><div><label>طموحنا</label><h2>رؤيتنا، رسالتنا، ومبادئنا</h2></div></div>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="modern-value-card text-center h-100">
+                            <div class="value-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width: 36px; height: 36px;"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg></div>
+                            <h3>إلهام لاكتشاف الشغف</h3><p class="text-muted mb-0">أن نُرسّخ ثقافة المشاركة الفعّالة، ونجعل من اكتشاف الأنشطة الجامعية تجربة ملهمة ومتاحة لكل طالب.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="modern-value-card text-center h-100">
+                            <div class="value-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width: 36px; height: 36px;"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.772 6.772 0 00-3.75-1.125c-3.315 0-6 2.685-6 6H12zm0 0a6.772 6.772 0 013.75-1.125c3.315 0 6 2.685 6 6H12z" /><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636" /></svg></div>
+                            <h3>تمكين وتواصل</h3><p class="text-muted mb-0">توفير منصة موثوقة تعرض الفعاليات بوضوح، وتشجع على بناء مجتمع طلابي مترابط غني بالتبادل المعرفي.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="modern-value-card text-center h-100">
+                            <div class="value-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width: 36px; height: 36px;"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" /></svg></div>
+                            <h3>قيم راسخة</h3><p class="text-muted mb-0">التميز، الشمولية، والابتكار هي البوصلة التي توجه كل تفاصيل هذه المنصة لخدمة الطالب الجامعي.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team -->
+        <section class="section">
+            <div class="container">
+                <div class="heading justify-content-center text-center mb-5"><div><label>العقول المبدعة</label><h2>فريق التطوير والإبداع</h2></div></div>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-sm-6 col-lg-3"><div class="modern-person-card"><div class="modern-person-avatar">ر</div><h3>روان محمد صوان</h3><b>ID: rawan_292134</b><p>إدارة المشروع وتصميم UI/UX</p></div></div>
+                    <div class="col-sm-6 col-lg-3"><div class="modern-person-card"><div class="modern-person-avatar">أ</div><h3>احمد جميل حسين فياض</h3><b>ID: ahmad_347912</b><p>تطوير الواجهات الأمامية</p></div></div>
+                    <div class="col-sm-6 col-lg-3"><div class="modern-person-card"><div class="modern-person-avatar">ح</div><h3>حيان ابراهيم الدرويش</h3><b>ID: haean_395180</b><p>برمجة التفاعلية (JavaScript)</p></div></div>
+                    <div class="col-sm-6 col-lg-3"><div class="modern-person-card"><div class="modern-person-avatar"><img src="assets/img/Waleed.jpg" alt="وليد"></div><h3>وليد فردوسي</h3><b>ID: waleed_283952</b><p>اختبار الجودة وتجربة المستخدم</p></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Policies -->
+        <section class="section soft">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-6"><div class="modern-value-card"><h3 class="mb-3">آلية اعتماد الفعاليات</h3><p class="text-muted mb-0 fs-5 lh-lg">تتيح المنصة للجهات المنظمة تقديم طلبات نشر الفعاليات، حيث تُراجع البيانات والصور بعناية لضمان جودتها قبل إدراجها للطلاب.</p></div></div>
+                    <div class="col-lg-6"><div class="modern-value-card"><h3 class="mb-3">ضوابط النشر</h3><ul class="text-muted fs-5 lh-lg mb-0" style="padding-right: 1.5rem;"><li>الدقة والوضوح في عرض معلومات الفعالية وتواريخها.</li><li>التوافق التام مع القيم والمصلحة المجتمعية للطلاب.</li><li>استخدام مواد بصرية موثوقة وخالية من حقوق النشر.</li><li>الالتزام بتحديث البيانات فور حدوث أي تغيير.</li></ul></div></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="modern-footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                    <img src="assets/img/svu-logo.png" alt="شعار الجامعة" style="height: 70px; margin-bottom: 15px; filter: drop-shadow(0 0 5px rgba(255,255,255,0.2));">
+                    <p style="line-height: 1.8;">مساحة رقمية تجمع المعرفة والإبداع والمجتمع الجامعي في مكان واحد، لتسهيل وصول الطلاب إلى كافة الأنشطة.</p>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                    <h4>روابط سريعة</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">الرئيسية</a></li><li><a href="events.html">الفعاليات</a></li><li><a href="about.html">عن الدليل</a></li><li><a href="contact.html">اتصل بنا</a></li><li><a href="https://www.svuonline.org/" target="_blank" rel="noopener">موقع الجامعة الرسمي</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0"><h4>تواصل معنا</h4><p>📧 info@svu-events.edu</p><p>📍 الجامعة الافتراضية السورية</p></div>
+                <div class="col-lg-3 col-md-6">
+                    <h4>تابعنا</h4><p class="mb-3">ابقَ على اطلاع بأحدث الفعاليات.</p>
+                    <div class="social-icons d-flex flex-wrap" style="gap: 15px;">
+                        <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a><a href="#" class="x-twitter"><i class="fa-brands fa-x-twitter"></i></a><a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom"><p class="m-0">&copy; 2024 دليل فعاليات الجامعة الافتراضية.</p></div>
+        </div>
+    </footer>
+
+    <button id="topBtn" aria-label="العودة للأعلى">↑</button>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
